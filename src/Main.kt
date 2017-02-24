@@ -120,7 +120,11 @@ private fun initValues(videos: MutableList<Video>, endpointHashMap: MutableList<
         val caches = scanner.nextInt()
         scanner.nextLine()
         for (j in 0..caches - 1) {
-            ePoint.addLatencyList(Latency(i, scanner.nextInt(), scanner.nextInt()))
+            val idCache = scanner.nextInt()
+            val value = scanner.nextInt()
+            if (value < ePoint.latency) {
+                ePoint.addLatencyList(Latency(i, idCache, value))
+            }
             scanner.nextLine()
         }
         endpointHashMap.add(ePoint)
