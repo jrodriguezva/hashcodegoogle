@@ -68,9 +68,9 @@ fun main(args: Array<String>) {
                     val saveTimeOrder = saveTime.sortedByDescending { it.size }
                     for (saves in saveTimeOrder) {
                         val cache = cacheHashMap[saves.idCache]
-                        if (cache.getSizeAvailable() >= video.size) {
+                        if (cache.sizeAvailable >= video.size) {
                             cache.addIdsVideo(video.id)
-                            cache.setSizeAvailable(cache.getSizeAvailable() - video.size)
+                            cache.sizeAvailable = cache.sizeAvailable - video.size
                             break
                         }
                     }
@@ -81,13 +81,13 @@ fun main(args: Array<String>) {
             val sb = StringBuilder()
 
             for (c in cacheHashMap) {
-                if (c.getIdsVideo().size > 0) {
+                if (c.idsVideo.size > 0) {
                     count++
                     val videoBuffer = StringBuilder()
-                    for (i in c.getIdsVideo()) {
+                    for (i in c.idsVideo) {
                         videoBuffer.append(i).append(" ")
                     }
-                    sb.append(c.getId()).append(" ").append(videoBuffer.toString()).append("\n")
+                    sb.append(c.id).append(" ").append(videoBuffer.toString()).append("\n")
                 }
             }
             val path = Paths.get(file!!.name.replaceFirst("[.][^.]+$".toRegex(), "") + ".out")
