@@ -1,12 +1,13 @@
 import java.util.ArrayList
 
 /**
- * Created by juan on 23/2/17.
- */
+* @author juan
+* @since 23/2/17
+*/
 class Endpoint {
     private var latencyList: MutableList<Latency> = ArrayList()
     var id: Int = 0
-    private var requestList: MutableList<Request> = ArrayList()
+    private var requestList: MutableList<`Request.kt`> = ArrayList()
     var latency: Int = 0
 
     fun getLatencyList(): List<Latency> {
@@ -17,15 +18,15 @@ class Endpoint {
         this.latencyList = latencyList
     }
 
-    fun getRequestList(): List<Request> {
+    fun getRequestList(): List<`Request.kt`> {
         return requestList
     }
 
-    fun setRequestList(requestList: MutableList<Request>) {
+    fun setRequestList(requestList: MutableList<`Request.kt`>) {
         this.requestList = requestList
     }
 
-    constructor(latencyList: MutableList<Latency>, id: Int, requestList: MutableList<Request>, latency: Int) {
+    constructor(latencyList: MutableList<Latency>, id: Int, requestList: MutableList<`Request.kt`>, latency: Int) {
         this.latencyList = latencyList
         this.id = id
         this.requestList = requestList
@@ -41,7 +42,7 @@ class Endpoint {
         this.latencyList.add(latencyList)
     }
 
-    fun addRequestList(requestList: Request) {
+    fun addRequestList(requestList: `Request.kt`) {
         this.requestList.add(requestList)
     }
 }

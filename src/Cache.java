@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by juan on 23/2/17.
+ * @author juan
+ * @since 23/2/17
  */
 public class Cache {
     int id;
