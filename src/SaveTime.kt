@@ -1,0 +1,1 @@
+class SaveTime(val idCache: Int,var size:Int)
